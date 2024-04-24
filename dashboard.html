@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - COLLAGE-KART</title>
+    <style>
+        body {
+            background-color: #000;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            padding: 20px; /* Add padding for better spacing */
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .section {
+            margin-bottom: 50px; /* Add margin between sections */
+        }
+
+        button {
+            padding: 10px 20px;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            border-radius: 20px;
+            background-color: #00ff00;
+            color: #000;
+            font-weight: bold;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #00cc00;
+        }
+
+        /* Style for request box */
+        .request-box {
+            background-color: #222;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 255, 0, 0.5); /* Neon glow effect */
+        }
+
+        .request-box textarea {
+            width: 100%;
+            height: 100px;
+            padding: 10px;
+            margin-top: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #333;
+            color: #fff;
+            resize: none;
+        }
+
+        /* Style for order option boxes */
+        .order-box {
+            background-color: #222;
+            border: 2px solid #00ff00;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .order-box h2 {
+            margin-bottom: 10px;
+        }
+
+        .order-box p {
+            margin-bottom: 20px;
+        }
+
+        .order-box button {
+            margin-top: 10px;
+        }
+
+        /* Style for navigation bar */
+        nav {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        nav a {
+            margin-right: 20px;
+            color: #00ff00;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 18px;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #00cc00;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to COLLAGE-KART Dashboard</h1>
+
+    <!-- Navigation bar -->
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">Profile</a>
+        <a href="#">Messages</a>
+        <a href="#">Settings</a>
+        <a href="about.html">About Us</a>
+        <a href="partnership.html">Partnership</a> <!-- Updated "Partnership" link -->
+        <a href="#">Tech Support</a>
+    </nav>
+
+    <div class="section">
+        <div class="order-box">
+            <h2>Order from Nearby Shop</h2>
+            <p>Order something from the shop and have it delivered to you by a nearby person.</p>
+            <button onclick="orderFromShop()">Order Now</button>
+        </div>
+        <div class="order-box">
+            <h2>Order Art and Craft</h2>
+            <p>Explore a variety of art and craft products created by talented students and place your order.</p>
+            <button onclick="orderArtCraft()">Order Now</button>
+        </div>
+    </div>
+
+    <!-- Tech Support section -->
+    <div class="section">
+        <h2>Tech Support</h2>
+        <p>Ask for technical support related to electronic devices or share reviews about electronic devices.</p>
+        <!-- Tech support form -->
+        <div class="request-box">
+            <label for="tech-support">Describe your tech support request or review:</label><br>
+            <textarea id="tech-support" name="tech-support" required></textarea><br>
+            <button type="button" onclick="submitTechSupport()">Submit Request</button>
+        </div>
+    </div>
+
+    <!-- Request section -->
+    <div class="section">
+        <h2>Take Request</h2>
+        <!-- Request box -->
+        <div class="request-box">
+            <label for="request">Please describe your request:</label><br>
+            <textarea id="request" name="request" required></textarea><br>
+            <button type="button" onclick="submitRequest()">Submit Request</button>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Navigation</h2>
+        <button onclick="location.href='login.html';">Logout</button>
+        <!-- Add other navigation options or links to other pages here -->
+    </div>
+
+    <script>
+        function submitRequest() {
+            var requestText = document.getElementById("request").value;
+            // Here you can process the request, for example, send it to the server
+            console.log("Request:", requestText);
+            alert("Your request has been submitted!"); // For demonstration
+        }
+
+        function orderFromShop() {
+            // Add logic to handle ordering from the shop
+            alert("Order from nearby shop option clicked!");
+        }
+
+        function orderArtCraft() {
+            // Add logic to handle ordering art and craft products
+            alert("Order art and craft option clicked!");
+        }
+
+        function submitTechSupport() {
+            var techSupportText = document.getElementById("tech-support").value;
+            // Here you can process the tech support request or review
+            console.log("Tech Support:", techSupportText);
+            alert("Your tech support request or review has been submitted!"); // For demonstration
+        }
+    </script>
+</body>
+</html>
