@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #000;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #24292e;
+            padding: 10px;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .container {
+            width: 80%;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: rgba(0, 255, 0, 0.1);
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+        }
+
+        .profile-header {
+            display: flex;
+            align-items: center;
+        }
+
+        .profile-header img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin-right: 20px;
+            border: 5px solid #00ff00;
+        }
+
+        .bio {
+            margin-top: 20px;
+        }
+
+        h1 {
+            color: #0366d6;
+        }
+
+        h2 {
+            color: #0366d6;
+        }
+
+        p {
+            margin: 10px 0;
+        }
+
+        /* Updated style for repositories */
+        .repo-item {
+            background-color: #222;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        .repo-item h3 {
+            margin: 0;
+        }
+
+        .repo-description {
+            display: none;
+        }
+
+        .repo-item.active .repo-description {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#">Repositories</a></li>
+                <li><a href="#">Projects</a></li>
+                <li><a href="#">Packages</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <div class="container">
+        <section id="user-info">
+            <div class="profile-header">
+                <img src="sw.jpeg" alt="Profile Picture">
+                <div class="profile-details">
+                    <h1>SWASTIK PANDEY</h1>
+                    <p>Email: swastikpandey@gmail.com</p>
+                    <p>Domain: APP Development</p>
+                </div>
+            </div>
+            <div class="bio">
+                <h2>Bio</h2>
+                <p>Developer specializing in app development.</p>
+            </div>
+        </section>
+
+        <section id="repositories">
+            <h2>Repositories</h2>
+            <div id="repos-list">
+                <!-- Repository items will be populated here -->
+                <div class="repo-item">
+                    <h3>GESTURE CONTROL MOUSE</h3>
+                    <p class="repo-description">Experience the future of computing with our Gesture Control Mouse. Navigate your digital world with intuitive hand movements, revolutionizing the way you interact with technology. Enhance productivity and streamline tasks effortlessly.</p>
+                </div>
+                <div class="repo-item">
+                    <h3>CLOCK TIME</h3>
+                    <p class="repo-description">Empower your time management with our Clock App. Seamlessly track time, set alarms, and customize your schedule with precision. Stay organized, efficient, and on top of your day with this intuitive application.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="activity">
+            <h2>Activity</h2>
+            <p>Embark on a journey with Brain Bridge, a dynamic project blending HTML, CSS, and JavaScript. Discover a world where creativity meets technology, fostering innovation, collaboration, and boundless possibilities. Dive into an immersive experience where coding prowess builds bridges to the future.</p>
+        </section>
+    </div>
+
+    <script>
+        // Add event listeners to each repo item to toggle description visibility
+        const repoItems = document.querySelectorAll('.repo-item');
+        repoItems.forEach(item => {
+            item.addEventListener('click', () => {
+                repoItems.forEach(item => {
+                    item.classList.remove('active');
+                });
+                item.classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>
