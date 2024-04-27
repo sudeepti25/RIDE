@@ -105,7 +105,7 @@
     <!-- Navigation bar -->
     <nav>
         <a href="#">Home</a>
-        <a href="#">Profile</a>
+        <a href="profile.html">Profile</a>
         <a href="#">Messages</a>
         <a href="#">Settings</a>
         <a href="about.html">About Us</a>
@@ -118,23 +118,6 @@
             <h2>Form Professional Teams</h2>
             <p>Form professional teams with experts in various fields for your projects or business ventures.</p>
             <a href="team.html"><button>Form Now</button></a>
-        </div>
-        <div class="order-box">
-            <h2>Hire for Art and Craft</h2>
-            <p>Hire a skilled artisan or craftsperson to create unique artworks or handcrafted items.</p>
-            <button onclick="hireForArtCraft()">Hire Now</button>
-        </div>
-    </div>
-
-    <!-- Tech Support section -->
-    <div class="section">
-        <h2>Tech Support</h2>
-        <p>Ask for technical support related to electronic devices or share reviews about electronic devices.</p>
-        <!-- Tech support form -->
-        <div class="request-box">
-            <label for="tech-support">Describe your tech support request or review:</label><br>
-            <textarea id="tech-support" name="tech-support" required></textarea><br>
-            <button type="button" onclick="submitTechSupport()">Submit Request</button>
         </div>
     </div>
 
@@ -161,18 +144,6 @@
             // Here you can process the request, for example, send it to the server
             console.log("Request:", requestText);
             alert("Your request has been submitted!"); // For demonstration
-        }
-
-        function hireForArtCraft() {
-            // Add logic to handle hiring for art and craft
-            alert("Hire for art and craft option clicked!");
-        }
-
-        function submitTechSupport() {
-            var techSupportText = document.getElementById("tech-support").value;
-            // Here you can process the tech support request or review
-            console.log("Tech Support:", techSupportText);
-            alert("Your tech support request or review has been submitted!"); // For demonstration
         }
     </script>
 </body>
