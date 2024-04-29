@@ -1,134 +1,158 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>My Portfolio</title>
-<style>
-    body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 0;
-        background-color: #000;
-    }
-    header {
-        background-color: #000;
-        color: #00ff00;
-        padding: 10px 20px;
-        text-align: center;
-        border-color: #00ff00;
-    }
-    .container {
-        max-width: 800px;
-        margin: 20px auto;
-        padding: 20px;
-        background-color: #121111;
-        border-radius: 5px;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        color: #00ff00;
-        border: 1px solid #00ff00;
-    }
-    label, input, textarea {
-        display: block;
-        margin-bottom: 10px;
-        color: #00ff00;
-    }
-    input, textarea {
-        background-color: #ebe7e7;
-        width: 100%;
-        padding: 5px;
-        border: 1px solid #ccc;
-        border-radius: 3px;
-    }
-    button {
-        padding: 10px 20px;
-        background-color: #ebe7e7;
-        color: #000;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-    }
-    button:hover {
-        background-color: #fff;
-    }
-    button:active {
-        background-color: #fff;
-    }
-    button:focus {
-        outline: none;
-    }
-    /* Other styles remain the same */
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #000;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+        }
 
-label:hover,
-input:hover,
-textarea:hover {
+        header {
+            background-color: #24292e;
+            padding: 10px;
+        }
 
-        color: #00ff00;
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
 
-    font-weight: bolder;
-}
-/* Other styles remain the same */
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
 
-input:hover {
-    background-color: #fff;
-    color: #000;
-}
-.container {
-    max-width: 800px;
-    margin: 20px auto;
-    padding: 20px;
-    background-color: #121111;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    color: #00ff00;
-    border: 1px solid #00ff00;
-    opacity: 0;
-    transition: opacity 3s ease-out;
-}
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
 
-.container.show {
-    opacity: 1;
-}
+        .container {
+            width: 80%;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: rgba(0, 255, 0, 0.1);
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+        }
 
+        .profile-header {
+            display: flex;
+            align-items: center;
+        }
 
+        .profile-header img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin-right: 20px;
+            border: 5px solid #00ff00;
+        }
 
-</style>
-<script>
-    document.addEventListener("DOMContentLoaded", function() {
-        setTimeout(function() {
-            document.querySelector(".container").classList.add("show");
-        }, 500); // Delay in milliseconds
-    });
-</script>
+        .bio {
+            margin-top: 20px;
+        }
 
+        h1 {
+            color: #0366d6;
+        }
+
+        h2 {
+            color: #0366d6;
+        }
+
+        p {
+            margin: 10px 0;
+        }
+
+        /* Updated style for repositories */
+        .repo-item {
+            background-color: #222;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        .repo-item h3 {
+            margin: 0;
+        }
+
+        .repo-description {
+            display: none;
+        }
+
+        .repo-item.active .repo-description {
+            display: block;
+        }
+    </style>
 </head>
 <body>
-<header>
-    <h1>My Portfolio</h1>
-</header>
-<div class="container">
-    <h2>Add Your Details</h2>
-    <form>
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name" required>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#">Repositories</a></li>
+                <li><a href="#">Projects</a></li>
+                <li><a href="#">Packages</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <div class="container">
+        <section id="user-info">
+            <div class="profile-header">
+                <img src="sw.jpeg" alt="Profile Picture">
+                <div class="profile-details">
+                    <h1>SWASTIK PANDEY</h1>
+                    <p>Email: swastikpandey@gmail.com</p>
+                    <p>Domain: APP Development</p>
+                </div>
+            </div>
+            <div class="bio">
+                <h2>Bio</h2>
+                <p>Developer specializing in app development.</p>
+            </div>
+        </section>
 
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required>
+        <section id="repositories">
+            <h2>Repositories</h2>
+            <div id="repos-list">
+                <!-- Repository items will be populated here -->
+                <div class="repo-item">
+                    <h3>GESTURE CONTROL MOUSE</h3>
+                    <p class="repo-description">Experience the future of computing with our Gesture Control Mouse. Navigate your digital world with intuitive hand movements, revolutionizing the way you interact with technology. Enhance productivity and streamline tasks effortlessly.</p>
+                </div>
+                <div class="repo-item">
+                    <h3>CLOCK TIME</h3>
+                    <p class="repo-description">Empower your time management with our Clock App. Seamlessly track time, set alarms, and customize your schedule with precision. Stay organized, efficient, and on top of your day with this intuitive application.</p>
+                </div>
+            </div>
+        </section>
 
-        <label for="phone">Phone:</label>
-        <input type="tel" id="phone" name="phone" required>
+        <section id="activity">
+            <h2>Activity</h2>
+            <p>Embark on a journey with Brain Bridge, a dynamic project blending HTML, CSS, and JavaScript. Discover a world where creativity meets technology, fostering innovation, collaboration, and boundless possibilities. Dive into an immersive experience where coding prowess builds bridges to the future.</p>
+        </section>
+    </div>
 
-        <label for="bio">Bio:</label>
-        <textarea id="bio" name="bio" rows="5" required></textarea>
-
-        <label for="skills">Skills:</label>
-        <input type="text" id="skills" name="skills" required>
-
-        <label for="experience">Experience:</label>
-        <textarea id="experience" name="experience" rows="5" required></textarea>
-
-        <button type="submit">Save</button>
-    </form>
-</div>
+    <script>
+        // Add event listeners to each repo item to toggle description visibility
+        const repoItems = document.querySelectorAll('.repo-item');
+        repoItems.forEach(item => {
+            item.addEventListener('click', () => {
+                repoItems.forEach(item => {
+                    item.classList.remove('active');
+                });
+                item.classList.add('active');
+            });
+        });
+    </script>
 </body>
 </html>
