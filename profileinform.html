@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Portfolio</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #000;
+    }
+    header {
+        background-color: #000;
+        color: #00ff00;
+        padding: 10px 20px;
+        text-align: center;
+        border-color: #00ff00;
+    }
+    .container {
+        max-width: 800px;
+        margin: 20px auto;
+        padding: 20px;
+        background-color: #121111;
+        border-radius: 5px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        color: #00ff00;
+        border: 1px solid #00ff00;
+    }
+    label, input, textarea {
+        display: block;
+        margin-bottom: 10px;
+        color: #00ff00;
+    }
+    input, textarea {
+        background-color: #ebe7e7;
+        width: 100%;
+        padding: 5px;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+    }
+    button {
+        padding: 10px 20px;
+        background-color: #ebe7e7;
+        color: #000;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    button:hover {
+        background-color: #fff;
+    }
+    button:active {
+        background-color: #fff;
+    }
+    button:focus {
+        outline: none;
+    }
+    /* Other styles remain the same */
+
+label:hover,
+input:hover,
+textarea:hover {
+
+        color: #00ff00;
+
+    font-weight: bolder;
+}
+/* Other styles remain the same */
+
+input:hover {
+    background-color: #fff;
+    color: #000;
+}
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #121111;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    color: #00ff00;
+    border: 1px solid #00ff00;
+    opacity: 0;
+    transition: opacity 3s ease-out;
+}
+
+.container.show {
+    opacity: 1;
+}
+
+
+
+</style>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        setTimeout(function() {
+            document.querySelector(".container").classList.add("show");
+        }, 500); // Delay in milliseconds
+    });
+</script>
+
+</head>
+<body>
+<header>
+    <h1>My Portfolio</h1>
+</header>
+<div class="container">
+    <h2>Add Your Details</h2>
+    <form>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="phone">Phone:</label>
+        <input type="tel" id="phone" name="phone" required>
+
+        <label for="bio">Bio:</label>
+        <textarea id="bio" name="bio" rows="5" required></textarea>
+
+        <label for="skills">Skills:</label>
+        <input type="text" id="skills" name="skills" required>
+
+        <label for="experience">Experience:</label>
+        <textarea id="experience" name="experience" rows="5" required></textarea>
+
+        <button type="submit">Save</button>
+    </form>
+</div>
+</body>
+</html>
