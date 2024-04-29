@@ -38,26 +38,6 @@
             background-color: #00cc00;
         }
 
-        /* Style for request box */
-        .request-box {
-            background-color: #222;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 255, 0, 0.5); /* Neon glow effect */
-        }
-
-        .request-box textarea {
-            width: 100%;
-            height: 100px;
-            padding: 10px;
-            margin-top: 10px;
-            border: none;
-            border-radius: 5px;
-            background-color: #333;
-            color: #fff;
-            resize: none;
-        }
-
         /* Style for order option boxes */
         .order-box {
             background-color: #222;
@@ -121,14 +101,12 @@
         </div>
     </div>
 
-    <!-- Request section -->
+    <!-- Find hackathons option -->
     <div class="section">
-        <h2>Take Request</h2>
-        <!-- Request box -->
-        <div class="request-box">
-            <label for="request">Please describe your request:</label><br>
-            <textarea id="request" name="request" required></textarea><br>
-            <button type="button" onclick="submitRequest()">Submit Request</button>
+        <div class="order-box">
+            <h2>Find Hackathons</h2>
+            <p>Explore and participate in upcoming hackathons to showcase your skills and innovate.</p>
+            <a href="hackathon.html"><button>Find Now</button></a>
         </div>
     </div>
 
@@ -137,14 +115,5 @@
         <button onclick="location.href='login.html';">Logout</button>
         <!-- Add other navigation options or links to other pages here -->
     </div>
-
-    <script>
-        function submitRequest() {
-            var requestText = document.getElementById("request").value;
-            // Here you can process the request, for example, send it to the server
-            console.log("Request:", requestText);
-            alert("Your request has been submitted!"); // For demonstration
-        }
-    </script>
 </body>
 </html>
