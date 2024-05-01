@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Registration Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color:#000;
+            margin: 0;
+            padding: 20px;
+            color:#00ff00 ;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .form-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color:#282727;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            color: #00ff00;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"],
+        select,
+        input[type="date"] {
+            width: calc(100% - 18px);
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            background-color: white;
+            color: #00ff00;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            float: right;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+            color: white;
+        }
+
+        .error-message {
+            color: red;
+        }
+
+        /* Responsive layout */
+        @media screen and (max-width: 600px) {
+            .form-container {
+                padding: 20px;
+            }
+            input[type="text"],
+            input[type="email"],
+            input[type="password"],
+            select,
+            input[type="date"],
+            input[type="submit"] {
+                width: 100%;
+            }
+        }
+
+        /* Add hover effect for all elements with color #00ff00 */
+        body,
+        h1,
+        label,
+        input[type="text"],
+        input[type="email"],
+        input[type="password"],
+        select,
+        input[type="date"],
+        input[type="submit"] {
+            transition: color 0.3s;
+        }
+
+        /* Apply hover effect */
+        body:hover,
+        h1:hover,
+        label:hover,
+        input[type="text"]:hover,
+        input[type="email"]:hover,
+        input[type="password"]:hover,
+        select:hover,
+        input[type="date"]:hover,
+        input[type="submit"]:hover {
+            color: #00cc00;
+        }
+    </style>
+</head>
+<body>
+    <h1>Event Registration Form</h1>
+    <div class="form-container">
+        <form id="eventForm" onsubmit="return validateForm()">
+            <h2>Event Organizer Details</h2>
+            <div class="form-group">
+                <label for="organizerName">Organizer Name:</label>
+                <input type="text" id="organizerName" name="organizerName" required>
+            </div>
+            <div class="form-group">
+                <label for="organizationName">Name of Organization:</label>
+                <input type="text" id="organizationName" name="organizationName" required>
+            </div>
+            <div class="form-group">
+                <label for="organizerMail">Organizer Email:</label>
+                <input type="email" id="organizerMail" name="organizerMail" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <div class="form-group">
+                <label for="confirmPassword">Confirm Password:</label>
+                <input type="password" id="confirmPassword" name="confirmPassword" required>
+            </div>
+
+            <h2>Event Details</h2>
+            <div class="form-group">
+                <label for="eventName">Event Name:</label>
+                <input type="text" id="eventName" name="eventName" required>
+            </div>
+            <div class="form-group">
+                <label for="eventType">Event Type:</label>
+                <input type="text" id="eventType" name="eventType" required>
+            </div>
+            <div class="form-group">
+                <label for="eventCategory">Event Category:</label>
+                <input type="text" id="eventCategory" name="eventCategory" required>
+            </div>
+            <div class="form-group">
+                <label for="eventTopic">Event Topic:</label>
+                <input type="text" id="eventTopic" name="eventTopic" required>
+            </div>
+            <div class="form-group">
+                <label for="country">Country:</label>
+                <input type="text" id="country" name="country" required>
+            </div>
+            <div class="form-group">
+                <label for="state">State:</label>
+                <input type="text" id="state" name="state" required>
+            </div>
+            <div class="form-group">
+                <label for="city">City:</label>
+                <input type="text" id="city" name="city" required>
+            </div>
+            <div class="form-group">
+                <label for="organizingSociety">Organizing Society:</label>
+                <input type="text" id="organizingSociety" name="organizingSociety" required>
+            </div>
+            <div class="form-group">
+                <label for="contactPerson">Contact Person for the Event:</label>
+                <input type="text" id="contactPerson" name="contactPerson" required>
+            </div>
+            <div class="form-group">
+                <label for="eventEnquiriesEmail">Event Enquiries Email:</label>
+                <input type="email" id="eventEnquiriesEmail" name="eventEnquiriesEmail" required>
+            </div>
+            <div class="form-group">
+                <label for="websiteAddress">Website Address:</label>
+                <input type="text" id="websiteAddress" name="websiteAddress">
+            </div>
+            <div class="form-group">
+                <label for="eventStartDate">Event Start Date:</label>
+                <input type="date" id="eventStartDate" name="eventStartDate" required>
+            </div>
+            <div class="form-group">
+                <label for="eventEndDate">Last Date of Event:</label>
+                <input type="date" id="eventEndDate" name="eventEndDate" required>
+            </div>
+            <div class="form-group">
+                <label for="eventTheme">Theme of the Event:</label>
+                <input type="text" id="eventTheme" name="eventTheme" required>
+            </div>
+           
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+</body>
+</html>
