@@ -15,6 +15,15 @@
         h1 {
             text-align: center;
             margin-bottom: 30px;
+            animation: rotateText 10s linear 2;
+        }
+
+        @keyframes rotateText {
+            0% { transform: rotateY(0deg); }
+            25% { transform: rotateY(90deg); }
+            50% { transform: rotateY(180deg); }
+            75% { transform: rotateY(270deg); }
+            100% { transform: rotateY(360deg); }
         }
 
         .section {
@@ -31,7 +40,7 @@
             color: #000;
             font-weight: bold;
             font-size: 16px;
-            transition: background-color 0.3s;
+            transition: background-color 0.3s; /* Add transition for background-color */
         }
 
         button:hover {
@@ -77,27 +86,73 @@
         nav a:hover {
             color: #00cc00;
         }
+
+        /* Add margin top to the first section */
+        .section:first-of-type {
+            margin-top: 20px;
+        }
+
+        /* Underline <h3> contents */
+        h3 {
+            text-decoration: underline;
+        }
+
+        /* Transition for span */
+        .typed span {
+            transition: color 0.3s;
+        }
+
+        /* Initial color for span */
+        .typed span {
+            color: #ccc;
+        }
+
+        /* Hover color for span */
+        .typed:hover span {
+            color: #fff;
+        }
     </style>
 </head>
 <body>
-    <h1>Dashboard BrainBridges</h1>
+    <h1>Welcome to BrainBridges</h1>
 
     <!-- Navigation bar -->
     <nav>
         <a href="#">Home</a>
-        <a href="profile.html">Profile</a>
-        <a href="#">Messages</a>
-        <a href="#">Settings</a>
+        <a href="profile.html"> Your Profile</a>
+        <a href="#">Your team</a>
+        <a href="#">Requests</a>
         <a href="about.html">About Us</a>
-        <a href="partnership.html">Partnership</a>
-        <a href="#">Tech Support</a>
+        <a href="partnership.html">Saved</a>
+        <a href="#">Settings</a>
     </nav>
+
+    <div class="section">
+        <h3>Find Scheduled Hackathons </h3>
+        <p>Discover and join upcoming hackathons from around the world. Our platform provides detailed information about each event, including dates, themes, and registration deadlines, making it easy for you to plan your participation.</p>
+    </div>
+
+    <div class="section">
+        <h3>Team Formation Made Easy</h3>
+        <p>Create or join teams with other university students who share your passion and skills. Our team-building features help you find the perfect collaborators for your hackathon projects, ensuring a dynamic and diverse group that can tackle any challenge.</p>
+    </div>
+
+    <div class="section">
+        <h3>Build Your Portfolio</h3>
+        <p>Showcase your hackathon projects and accomplishments in a professional portfolio. Customize your portfolio with project descriptions, tech stacks used, and any awards or recognitions received. Impress potential employers and collaborators with your innovative projects and problem-solving skills.</p>
+    </div>
+
+    <div class="section">
+        <h3>Join Our Community</h3>
+        <p>Become part of a vibrant community of developers, designers, and innovators. Share your experiences, learn from others, and stay updated on the latest hackathon trends and opportunities. Start your hackathon journey with us and unlock a world of possibilities!</p>
+        <p>Ready to take your skills to the next level? Join our platform and start your hackathon journey today!</p>
+    </div>
 
     <div class="section">
         <div class="order-box">
             <h2>Form Professional Teams</h2>
             <p>Form professional teams with experts in various fields for your projects or business ventures.</p>
-            <a href="team.html"><button>Form Now</button></a>
+            <button onclick="formTeam()">Form Now</button>
         </div>
     </div>
 
@@ -115,5 +170,11 @@
         <button onclick="location.href='login.html';">Logout</button>
         <!-- Add other navigation options or links to other pages here -->
     </div>
+
+    <script>
+        function formTeam() {
+            // Your form team function implementation
+        }
+    </script>
 </body>
 </html>
