@@ -17,6 +17,9 @@
         padding: 10px 20px;
         text-align: center;
         border-color: #00ff00;
+        
+
+        
     }
     .container {
         max-width: 800px;
@@ -31,7 +34,10 @@
     label, input, textarea {
         display: block;
         margin-bottom: 10px;
-        color: #00ff00;
+        
+    }
+    input{
+        color: #000;
     }
     input, textarea {
         background-color: #ebe7e7;
@@ -63,7 +69,7 @@ label:hover,
 input:hover,
 textarea:hover {
 
-        color: #00ff00;
+        color:#000;
 
     font-weight: bolder;
 }
@@ -92,6 +98,7 @@ input:hover {
 
 
 
+
 </style>
 <script>
     document.addEventListener("DOMContentLoaded", function() {
@@ -107,8 +114,6 @@ input:hover {
     <h1>My Portfolio</h1>
 </header>
 <div class="container">
-    <form action="portfolio.php" method="post">
-
     <h2>Add Your Details</h2>
     <form>
         <label for="name">Name:</label>
@@ -124,7 +129,7 @@ input:hover {
         <textarea id="bio" name="bio" rows="5" required></textarea>
 
         <label for="skills">Skills:</label>
-        <input type="text" id="skills" name="skills" required>
+        <input type="text" id="skills" name="skills" rows="5" required>
 
         <label for="experience">Experience:</label>
         <textarea id="experience" name="experience" rows="5" required></textarea>
